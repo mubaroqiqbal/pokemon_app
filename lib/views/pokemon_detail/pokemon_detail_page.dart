@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pokemon_app/models/evolutions/get_pokemon_evolution_chain_responses.dart';
@@ -87,7 +89,7 @@ class _PokemonDetailPageState extends ConsumerState<PokemonDetailPage> {
                     Positioned(
                       bottom: 0,
                       child: SizedBox(
-                        height: height * 0.55,
+                        height: height * 0.525,
                         width: width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -99,7 +101,7 @@ class _PokemonDetailPageState extends ConsumerState<PokemonDetailPage> {
                     Positioned(
                       top: 0,
                       child: SizedBox(
-                        height: height * 0.44,
+                        height: (height * 0.5) - (Platform.isIOS ? 48 : 24),
                         width: width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,

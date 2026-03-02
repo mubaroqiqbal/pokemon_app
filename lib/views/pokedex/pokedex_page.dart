@@ -20,7 +20,7 @@ class _PokedexPageState extends ConsumerState<PokedexPage> {
     final pokedexNotifier = ref.read(pokedexProvider.notifier);
 
     return Scaffold(
-      backgroundColor: const Color(0xffF5F6FA),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Pokedex"),
         centerTitle: false,
@@ -65,6 +65,7 @@ class _PokedexPageState extends ConsumerState<PokedexPage> {
                   },
                 ),
               ),
+              PokedexError() => Center(child: Text(pokedexState.message)),
               PokedexState() => SizedBox.shrink(),
             },
           );

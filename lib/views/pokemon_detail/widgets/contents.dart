@@ -34,7 +34,7 @@ class __ContentState extends ConsumerState<_Content>
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.fromLTRB(16, 24, 16, 16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
