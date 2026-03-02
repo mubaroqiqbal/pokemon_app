@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pokemon_app/providers/pokemon_providers.dart';
+import 'package:pokemon_app/shared/enum/list_view_type.dart';
 import 'package:pokemon_app/shared/enum/pokemon_type.dart';
 import 'package:pokemon_app/views/pokemon_detail/pokemon_detail_page.dart';
 
 class PokedexCard extends ConsumerWidget {
   final String name;
   final VoidCallback onTap;
+  final ListViewType viewType;
 
-  const PokedexCard({super.key, required this.name, required this.onTap});
+  const PokedexCard({
+    super.key,
+    required this.name,
+    required this.onTap,
+    this.viewType = ListViewType.grid,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,6 +32,7 @@ class PokedexCard extends ConsumerWidget {
         return GestureDetector(
           onTap: onTap,
           child: Container(
+            height: viewType == ListViewType.list ? 120 : null,
             decoration: BoxDecoration(
               color: pokemonType.color,
               borderRadius: BorderRadius.circular(20),
